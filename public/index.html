@@ -1,20 +1,33 @@
 <!doctype html>
 <html lang="pt-BR">
- <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Laboratório de autenticação</title>
- </head>
- <body>
- <main>
- <h1>Laboratório de autenticação</h1>
- <p id="status">A sessão ainda não foi consultada.</p>
- <a href="/oauth/login/google">Entrar com Google</a><br>
- <a href="/oauth/login/github">Entrar com GitHub</a>
- <form method="post" action="/oauth/logout">
-   <button type="submit">Sair</button>
- </form>
- </main>
- <script src="/app.js"></script>
- </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laboratório de autenticação</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="auth-card">
+    <div class="auth-icon">🔐</div>
+    <h1>Laboratório de autenticação</h1>
+    <p id="status" class="status">Verificando sessão...</p>
+
+    <div id="login-links" class="login-links">
+      <a href="/oauth/login/google" class="btn btn-google">
+        <span class="btn-icon">G</span> Entrar com Google
+      </a>
+      <a href="/oauth/login/github" class="btn btn-github">
+        <span class="btn-icon">⚙</span> Entrar com GitHub
+      </a>
+    </div>
+
+    <form id="logout-form" method="post" action="/oauth/logout" class="logout-form hidden">
+      <button type="submit" class="btn btn-logout">Sair</button>
+    </form>
+
+    <p class="footer-note">OAuth 2.0 + PKCE · Cloudflare Pages Functions</p>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
 </html>
