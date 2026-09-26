@@ -29,7 +29,7 @@
 - **Pedido enviado:** executado no console dessa outra origem: fetch("https://alex-byts-github-io.pages.dev/oauth/logout", { method: "POST", credentials: "include" }).
 - **Resultado esperado:** a rota deve recusar a operação por origem inválida.
 - **Resultado observado:** a requisição foi bloqueada pelo próprio navegador antes de sair da máquina, por violar a Content Security Policy (CSP) definida pelo site de origem (instagram.com), com a mensagem "Refused to connect because it violates the document's Content Security Policy". Isso demonstra uma camada de defesa do navegador atuando antes mesmo de a checagem de Origin do nosso backend (logout.js) precisar ser exercitada — ambas as camadas, em conjunto, impedem o ataque.
-**
+
 ## Caso 6: reutilização do cookie revogado
 
 - **Preparação:** com uma sessão válida criada após o login com Google, foi copiado temporariamente o valor do cookie `__Host-session` pelas ferramentas de desenvolvimento do navegador.
