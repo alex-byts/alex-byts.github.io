@@ -30,12 +30,12 @@
 - **Resultado esperado:** a rota deve recusar a operação por origem inválida.
 - **Resultado observado:** a requisição foi bloqueada pelo próprio navegador antes de sair da máquina, por violar a Content Security Policy (CSP) definida pelo site de origem (instagram.com), com a mensagem "Refused to connect because it violates the document's Content Security Policy". Isso demonstra uma camada de defesa do navegador atuando antes mesmo de a checagem de Origin do nosso backend (logout.js) precisar ser exercitada — ambas as camadas, em conjunto, impedem o ataque.
 **
-## Caso 6: reutilização do cookie revogado**
+## Caso 6: reutilização do cookie revogado
 
-- ****Preparação:**** com uma sessão válida criada após o login com Google, foi copiado temporariamente o valor do cookie `__Host-session` pelas ferramentas de desenvolvimento do navegador.
+- **Preparação:** com uma sessão válida criada após o login com Google, foi copiado temporariamente o valor do cookie `__Host-session` pelas ferramentas de desenvolvimento do navegador.
 
-- ****Pedido enviado:**** realizado o logout normalmente pela aplicação. Em seguida, o mesmo valor do cookie `__Host-session` foi restaurado no navegador e foi feita uma nova consulta à rota `/api/me`.
+- **Pedido enviado:** realizado o logout normalmente pela aplicação. Em seguida, o mesmo valor do cookie `__Host-session` foi restaurado no navegador e foi feita uma nova consulta à rota `/api/me`.
 
-- ****Resultado esperado:**** a rota `/api/me` deve responder `401`, pois a sessão correspondente ao cookie já foi removida do banco D1 durante o logout.
+- **Resultado esperado:** a rota `/api/me` deve responder `401`, pois a sessão correspondente ao cookie já foi removida do banco D1 durante o logout.
 
-- ****Resultado observado:**** a rota `/api/me` respondeu `401` e a aplicação indicou que não havia sessão ativa. O cookie revogado não conseguiu restaurar a sessão. Comportamento conforme esperado.
+- **Resultado observado:** a rota `/api/me` respondeu `401` e a aplicação indicou que não havia sessão ativa. O cookie revogado não conseguiu restaurar a sessão. Comportamento conforme esperado.
