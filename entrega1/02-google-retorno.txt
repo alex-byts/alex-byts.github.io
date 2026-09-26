@@ -1,0 +1,1 @@
+https://alex-byts-github-io.pages.dev/oauth/callback/google
