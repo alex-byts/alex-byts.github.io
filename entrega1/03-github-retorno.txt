@@ -1,2 +1,0 @@
-Homepage URL: https://alex-byts-github-io.pages.dev
-Authorization callback URL: https://alex-byts-github-io.pages.dev/oauth/callback/github
