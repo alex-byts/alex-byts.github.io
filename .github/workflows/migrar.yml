@@ -19,7 +19,7 @@ jobs:
           node-version: 22
 
       - name: Aplica as migrações no D1 remoto
-        run: npx --yes wrangler d1 migrations apply NOME_DO_BANCO --remote
+        run: npx --yes wrangler d1 migrations apply oauth-sessions-alex --remote
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
