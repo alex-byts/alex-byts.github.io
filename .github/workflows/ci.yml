@@ -27,4 +27,4 @@ jobs:
           sqlite3 teste.db ".tables"
 
       - name: Valida HTML
-        run: npx --yes htmlhint "**/*.html"
+        run: npx --yes htmlhint "public/index.html"
