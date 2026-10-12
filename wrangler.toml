@@ -1,0 +1,8 @@
+name = "alex-byts-github-io"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "oauth-sessions-alex"
+database_id = "43fa3fc3-110c-4d70-baeb-38918fd1f4eb"
+migrations_dir = "migrations"
