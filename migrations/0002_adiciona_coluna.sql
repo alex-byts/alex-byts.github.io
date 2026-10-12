@@ -1,0 +1,1 @@
+ALTER TABL sessions ADD COLUMN user_agent TEXT;
